@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload</title>
+</head>
+
+<body>
+  <form action="/upload" method="post" enctype="multipart/form-data" >
+    <span class="btn btn-default btn-file">
+      <input type="file" name="image">
+    </span>
+    <input type="submit" value="Upload your image" class="btn btn-primary">
+  </form>
+
+  <h3>REST API:</h3>
+  <p>
+    <strong>/upload: </strong> Upload image to server.
+    <ul>
+      <li><strong>Methods: </strong>POST</li>
+      <li><strong>Headers: </strong>form-data (image: file, resolution: text, use_gpu: text)</li>
+      <li><strong>Returns: </strong>"Upload finished: <em>image.jpg</em>"</li>
+      <li><strong>Example: </strong>/upload</li>
+    </ul>
+  </p>
+  <p>
+    <strong>/process: </strong> Run image processor.
+    <ul>
+      <li><strong>Methods: </strong>GET</li>
+      <li><strong>Headers: </strong>URL args (resolution: text, use_gpu: text, filename: text, process_name: text)</li>
+      <li><strong>Returns: </strong>"Started new process for: <em>filename</em>"</li>
+      <li><strong>Example: </strong>/process?resolution=orig&use_gpu=true&filename=0.jpg</li>
+    </ul>
+  </p>
+  <p>
+    <strong>/getProcessStatus: </strong> Check if the image processor is running.
+    <ul>
+      <li><strong>Methods: </strong>GET</li>
+      <li><strong>Headers:</strong> None</li>
+      <li><strong>Returns:</strong> <em>process_status</em> (running or finished)</li>
+      <li><strong>Example: </strong>/getProcessStatus</li>
+    </ul>
+  </p>
+  <p>
+    <strong>/getProcessedPhoto: </strong> Get image from server.
+    <ul>
+      <li><strong>Methods: </strong>GET</li>
+      <li><strong>Headers: </strong>URL args (filename)</li>
+      <li><strong>Returns: </strong>Image file specified by <em>filename</em> in <em>/enhanced</em></li>
+      <li><strong>Example: </strong>/getProcessedPhoto?filename=0_processed.png</li>
+    </ul>
+  </p>
+</body>
+</html>
