@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iPhancer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2no-lz-nYi">
+                                <rect key="frame" x="8" y="28" width="359" height="61"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="iPhancer">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="Zapfino"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AhA-ex-p8B">
+                                <rect key="frame" x="150.5" y="97" width="74" height="30"/>
+                                <state key="normal" title="Pick Photo"/>
+                                <connections>
+                                    <action selector="pickPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8A4-PR-zmM"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zwK-vS-4UM">
+                                <rect key="frame" x="0.0" y="135" width="375" height="283"/>
+                            </imageView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rf6-qf-sJA">
+                                <rect key="frame" x="0.0" y="458" width="375" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="4s9-1f-lfE"/>
+                                </constraints>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Fc-HY-K8p">
+                                <rect key="frame" x="172.5" y="608" width="30" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Go"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Resolution" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLC-Xg-1yK">
+                                <rect key="frame" x="128.5" y="434" width="119" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2no-lz-nYi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="2z0-v6-7q9"/>
+                            <constraint firstItem="Rf6-qf-sJA" firstAttribute="top" secondItem="zwK-vS-4UM" secondAttribute="bottom" constant="40" id="5yZ-af-CPg"/>
+                            <constraint firstItem="AhA-ex-p8B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jly-q6-ISa"/>
+                            <constraint firstItem="2no-lz-nYi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="KPp-mP-Kwi"/>
+                            <constraint firstItem="AhA-ex-p8B" firstAttribute="top" secondItem="2no-lz-nYi" secondAttribute="bottom" constant="8" id="Kef-eb-gFa"/>
+                            <constraint firstItem="tLC-Xg-1yK" firstAttribute="top" secondItem="zwK-vS-4UM" secondAttribute="bottom" constant="16" id="LZW-wg-3Va"/>
+                            <constraint firstItem="Rf6-qf-sJA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="MTf-Y0-KFJ"/>
+                            <constraint firstItem="Rf6-qf-sJA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TaA-om-3eS"/>
+                            <constraint firstItem="6Fc-HY-K8p" firstAttribute="top" secondItem="Rf6-qf-sJA" secondAttribute="bottom" constant="20" id="URm-fT-VoP"/>
+                            <constraint firstItem="6Fc-HY-K8p" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aEJ-sf-VQQ"/>
+                            <constraint firstItem="zwK-vS-4UM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cGY-KX-LUy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2no-lz-nYi" secondAttribute="trailing" constant="8" id="phz-Z3-VW2"/>
+                            <constraint firstItem="zwK-vS-4UM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rm6-Xh-e17"/>
+                            <constraint firstItem="zwK-vS-4UM" firstAttribute="top" secondItem="AhA-ex-p8B" secondAttribute="bottom" constant="8" id="v1u-St-1xs"/>
+                            <constraint firstItem="tLC-Xg-1yK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wIZ-x1-X3Q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6Fc-HY-K8p" secondAttribute="bottom" constant="20" id="x4f-XC-cq5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="zwK-vS-4UM" id="XBX-Iz-S1n"/>
+                        <outlet property="resolutionPicker" destination="Rf6-qf-sJA" id="O1M-LE-FFk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
+        </scene>
+    </scenes>
+</document>
