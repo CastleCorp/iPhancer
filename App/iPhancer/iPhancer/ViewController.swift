@@ -7,57 +7,38 @@
 //
 
 import UIKit
+import AVFoundation
+import Foundation
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet weak var resolutionPicker: UIPickerView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var resolutionPicker: UISegmentedControl!
     
-    var pickerData: [String] = [String]()
+//    let captureSession = AVCaptureSession()
+//    let stillImageOutut = AVCapturePhotoOutput()
+//    var previewLayer: AVCaptureVideoPreviewLayer?
+//    
+//    var captureDevice: AVCaptureDevice?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // connect picker data
-        self.resolutionPicker.delegate = self
-        self.resolutionPicker.dataSource = self
-        
-        // initialize picker data
-        pickerData = ["original", "high", "medium", "small", "tiny"]
+//        captureSession.sessionPreset = AVCaptureSession.Preset.high
+//
+//        if let availableDevices = AVCaptureDevice.devices() as? [AVCaptureDevice] {
+//            for device in availableDevices {
+//                if device.hasMediaType(AVMediaType.video) {
+//
+//                }
+//            }
+//        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
-    }
-    
-    
-    @IBAction func pickPhoto(_ sender: UIButton) {
-        let imagePicker = UIImagePickerController()
-        
-        imagePicker.sourceType = .photoLibrary
-        
-//        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-//            imagePicker.sourceType = .camera
-//        } else {
-//            imagePicker.sourceType = .photoLibrary
-//        }
-        
-        imagePicker.delegate = self
-        // show the image picker
-        present(imagePicker, animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -66,5 +47,26 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func pickPhoto(_ sender: UIButton) {
+        let imagePicker = UIImagePickerController()
+        
+        //imagePicker.sourceType = .photoLibrary
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            imagePicker.sourceType = .camera
+        } else {
+            imagePicker.sourceType = .photoLibrary
+        }
+        
+        imagePicker.delegate = self
+        // show the image picker
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func goButtonPushed(_ sender: UIButton) {
+        //process image
+    }
+    
 }
 
