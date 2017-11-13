@@ -14,26 +14,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var resolutionPicker: UISegmentedControl!
-    
-//    let captureSession = AVCaptureSession()
-//    let stillImageOutut = AVCapturePhotoOutput()
-//    var previewLayer: AVCaptureVideoPreviewLayer?
-//    
-//    var captureDevice: AVCaptureDevice?
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        captureSession.sessionPreset = AVCaptureSession.Preset.high
-//
-//        if let availableDevices = AVCaptureDevice.devices() as? [AVCaptureDevice] {
-//            for device in availableDevices {
-//                if device.hasMediaType(AVMediaType.video) {
-//
-//                }
-//            }
-//        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,16 +33,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func pickPhoto(_ sender: UIButton) {
+    @IBAction func takePhoto(_ sender: UIButton) {
         let imagePicker = UIImagePickerController()
-        
-        //imagePicker.sourceType = .photoLibrary
         
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             imagePicker.sourceType = .camera
         } else {
             imagePicker.sourceType = .photoLibrary
         }
+        
+        imagePicker.delegate = self
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func pickPhoto(_ sender: UIButton) {
+        let imagePicker = UIImagePickerController()
+        
+        imagePicker.sourceType = .photoLibrary
         
         imagePicker.delegate = self
         // show the image picker
