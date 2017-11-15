@@ -29,14 +29,16 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" ambiguous="YES" editable="NO" text="Using Tensorflow to Enhance Images. Select a resolution and an image, then press Go." textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gO5-Xn-BTY">
-                                <rect key="frame" x="65" y="97" width="244" height="67"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ukc-Px-mAN">
+                                <rect key="frame" x="0.0" y="631" width="375" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Go"/>
+                                <connections>
+                                    <action selector="goButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2nR-tC-Qsy"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="92I-d9-79D" userLabel="Resolution Stack">
-                                <rect key="frame" x="92" y="233" width="191" height="46"/>
+                                <rect key="frame" x="92" y="97" width="191" height="46"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resolution" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egf-2v-rAw">
                                         <rect key="frame" x="59.5" y="0.0" width="72" height="18"/>
@@ -54,58 +56,38 @@
                                     </segmentedControl>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IFa-f4-Yr2">
-                                <rect key="frame" x="8" y="287" width="359" height="274"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="274" id="1rb-vL-Emh"/>
-                                </constraints>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jOn-Nl-gNR" userLabel="Take Photo Stack">
-                                <rect key="frame" x="150" y="569" width="76" height="60"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5f-Ze-K4s">
-                                        <rect key="frame" x="0.0" y="0.0" width="76" height="30"/>
-                                        <state key="normal" title="Take Photo"/>
-                                        <connections>
-                                            <action selector="takePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="51e-5S-cUO"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AhA-ex-p8B">
-                                        <rect key="frame" x="0.0" y="30" width="76" height="30"/>
-                                        <state key="normal" title="Pick Photo"/>
-                                        <connections>
-                                            <action selector="pickPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8A4-PR-zmM"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ukc-Px-mAN">
-                                <rect key="frame" x="172" y="637" width="30" height="30"/>
-                                <state key="normal" title="Go"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5f-Ze-K4s">
+                                <rect key="frame" x="149.5" y="167" width="76" height="30"/>
+                                <state key="normal" title="Take Photo"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="51e-5S-cUO"/>
+                                </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IFa-f4-Yr2">
+                                <rect key="frame" x="0.0" y="205" width="375" height="418"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="m5f-Ze-K4s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1k1-67-8IE"/>
                             <constraint firstItem="2no-lz-nYi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="2z0-v6-7q9"/>
-                            <constraint firstItem="gO5-Xn-BTY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="65" id="3Ol-yR-ANi"/>
-                            <constraint firstItem="92I-d9-79D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="92" id="7AF-Ow-VJD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gO5-Xn-BTY" secondAttribute="trailing" constant="66" id="DHY-7v-RWN"/>
+                            <constraint firstItem="IFa-f4-Yr2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9ms-ZK-w9G"/>
                             <constraint firstItem="2no-lz-nYi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="KPp-mP-Kwi"/>
-                            <constraint firstItem="IFa-f4-Yr2" firstAttribute="leading" secondItem="2no-lz-nYi" secondAttribute="leading" id="MBv-DT-L5L"/>
-                            <constraint firstItem="Ukc-Px-mAN" firstAttribute="top" secondItem="jOn-Nl-gNR" secondAttribute="bottom" constant="8" symbolic="YES" id="MPo-7g-LBK"/>
-                            <constraint firstItem="IFa-f4-Yr2" firstAttribute="trailing" secondItem="2no-lz-nYi" secondAttribute="trailing" id="VqI-wh-sbR"/>
-                            <constraint firstItem="IFa-f4-Yr2" firstAttribute="centerX" secondItem="jOn-Nl-gNR" secondAttribute="centerX" id="h5F-01-Jfe"/>
-                            <constraint firstItem="jOn-Nl-gNR" firstAttribute="top" secondItem="IFa-f4-Yr2" secondAttribute="bottom" constant="8" symbolic="YES" id="iq1-wO-LbS"/>
-                            <constraint firstItem="IFa-f4-Yr2" firstAttribute="centerX" secondItem="Ukc-Px-mAN" secondAttribute="centerX" id="isL-qC-Sat"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="92I-d9-79D" secondAttribute="trailing" constant="92" id="k7y-Gm-InC"/>
-                            <constraint firstItem="Ukc-Px-mAN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="l0H-b1-lAo"/>
-                            <constraint firstItem="IFa-f4-Yr2" firstAttribute="top" secondItem="92I-d9-79D" secondAttribute="bottom" constant="8" symbolic="YES" id="m2W-Ib-LtC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ukc-Px-mAN" secondAttribute="trailing" id="P36-up-4Tw"/>
+                            <constraint firstItem="Ukc-Px-mAN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="WIU-M0-3lv"/>
+                            <constraint firstItem="Ukc-Px-mAN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="baM-p4-R7e"/>
+                            <constraint firstItem="m5f-Ze-K4s" firstAttribute="top" secondItem="92I-d9-79D" secondAttribute="bottom" constant="24" id="eIQ-gG-IdP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IFa-f4-Yr2" secondAttribute="trailing" id="eh6-vZ-dcp"/>
+                            <constraint firstItem="92I-d9-79D" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fUP-4a-P7R"/>
+                            <constraint firstItem="92I-d9-79D" firstAttribute="top" secondItem="2no-lz-nYi" secondAttribute="bottom" constant="8" id="gcc-2A-8vF"/>
+                            <constraint firstItem="IFa-f4-Yr2" firstAttribute="top" secondItem="m5f-Ze-K4s" secondAttribute="bottom" constant="8" id="pFw-Pe-YUT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2no-lz-nYi" secondAttribute="trailing" constant="8" id="phz-Z3-VW2"/>
-                            <constraint firstItem="gO5-Xn-BTY" firstAttribute="top" secondItem="2no-lz-nYi" secondAttribute="bottom" constant="8" symbolic="YES" id="wHC-1K-7K5"/>
+                            <constraint firstItem="Ukc-Px-mAN" firstAttribute="top" secondItem="IFa-f4-Yr2" secondAttribute="bottom" constant="8" symbolic="YES" id="wGe-3B-cbv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="IFa-f4-Yr2" id="9IQ-I2-E7Y"/>
                         <outlet property="resolutionPicker" destination="7vS-XH-n4E" id="IVe-2A-liM"/>
                     </connections>
                 </viewController>

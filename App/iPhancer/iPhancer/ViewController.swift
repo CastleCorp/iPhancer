@@ -45,19 +45,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.delegate = self
         present(imagePicker, animated: true, completion: nil)
     }
-    
-    @IBAction func pickPhoto(_ sender: UIButton) {
-        let imagePicker = UIImagePickerController()
-        
-        imagePicker.sourceType = .photoLibrary
-        
-        imagePicker.delegate = self
-        // show the image picker
-        present(imagePicker, animated: true, completion: nil)
-    }
-    
+   
     @IBAction func goButtonPushed(_ sender: UIButton) {
-        //process image
+        
     }
     
 }
