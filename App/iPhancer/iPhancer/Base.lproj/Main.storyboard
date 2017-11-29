@@ -34,7 +34,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Go"/>
                                 <connections>
-                                    <action selector="goButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2nR-tC-Qsy"/>
+                                    <segue destination="08i-Cg-uml" kind="show" identifier="showLoadingViewController" id="R29-r7-Kib"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="92I-d9-79D" userLabel="Resolution Stack">
@@ -53,6 +53,9 @@
                                             <segment title="Medium"/>
                                             <segment title="Low"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="indexChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="V0G-bo-zdT"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                             </stackView>
@@ -95,20 +98,39 @@
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
         </scene>
-        <!--View Controller-->
+        <!--Loading View Controller-->
         <scene sceneID="sqP-du-pch">
             <objects>
-                <viewController id="08i-Cg-uml" sceneMemberID="viewController">
+                <viewController id="08i-Cg-uml" customClass="LoadingViewController" customModule="iPhancer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yoZ-9n-Q8z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGM-dh-jQc">
+                                <rect key="frame" x="0.0" y="28" width="375" height="61"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Processing Image">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="Zapfino"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qGM-dh-jQc" firstAttribute="trailing" secondItem="Rwb-a1-t1R" secondAttribute="trailing" id="YR4-di-Yj0"/>
+                            <constraint firstItem="qGM-dh-jQc" firstAttribute="top" secondItem="Rwb-a1-t1R" secondAttribute="top" constant="8" id="bwk-5B-Gxm"/>
+                            <constraint firstItem="qGM-dh-jQc" firstAttribute="leading" secondItem="Rwb-a1-t1R" secondAttribute="leading" id="sYx-n8-wcp"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Rwb-a1-t1R"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tVL-vF-Flt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="762" y="118"/>
+            <point key="canvasLocation" x="951" y="118"/>
         </scene>
     </scenes>
 </document>

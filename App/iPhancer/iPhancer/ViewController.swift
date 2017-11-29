@@ -14,7 +14,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var resolutionPicker: UISegmentedControl!
-
+    
+    var resolution: String = "orig"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,8 +47,55 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         present(imagePicker, animated: true, completion: nil)
     }
    
-    @IBAction func goButtonPushed(_ sender: UIButton) {
+    @IBAction func indexChanged(_ sender: UISegmentedControl) {
+        switch resolutionPicker.selectedSegmentIndex {
+        case 0:
+            resolution = "orig";
+        case 1:
+            resolution = "medium";
+        case 2:
+            resolution = "small";
+        default:
+            resolution = "orig";
+        }
+    }
+    
+    func noImageAlert() {
+        let alert = UIAlertController(title: "No image selected", message: "Please select an image to process", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Close", style: .default, handler: {action in
+            switch action.style {
+            case .default:
+               alert.dismiss(animated: true, completion: nil)
+            
+            case .cancel:
+                alert.dismiss(animated: true, completion: nil)
+                
+            case .destructive:
+                print("destructive")
+            }
+        }))
         
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "showLoadingViewController" {
+            if imageView.image == nil {
+                noImageAlert()
+                return false
+            }
+            return true
+        }
+        return false
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showLoadingViewController" {
+            let lvc = segue.destination as! LoadingViewController
+            
+            lvc.image = imageView.image
+            lvc.resolution = resolution
+        }
     }
     
 }
