@@ -162,12 +162,12 @@
                                 <rect key="frame" x="0.0" y="6" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Original" id="1AC-UV-uLi">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="qnb-bo-PdA">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="uNa-bV-by5"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="qnb-bo-PdA">
                                             <connections>
                                                 <segue destination="BYZ-38-t0r" kind="show" id="gwf-KP-sCS"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="uNa-bV-by5"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -204,12 +204,12 @@
                                 <rect key="frame" x="0.0" y="6" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Processed" id="6lU-EW-UZ8">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="hxD-a7-bx6">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="dng-9L-X3f"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="hxD-a7-bx6">
                                             <connections>
                                                 <segue destination="BYZ-38-t0r" kind="show" id="Sa0-Kd-AYm"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="dng-9L-X3f"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

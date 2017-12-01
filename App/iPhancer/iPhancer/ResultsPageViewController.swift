@@ -10,6 +10,9 @@ import UIKit
 
 class ResultsPageViewController: UIPageViewController {
     
+    var originalImage: UIImage!
+    var processedImage: UIImage!
+    
     fileprivate lazy var pages: [UIViewController] = {
         return [
             self.getViewController(withIdentifier: "OriginalViewController"),
@@ -49,6 +52,7 @@ class ResultsPageViewController: UIPageViewController {
         let pageContentViewController = pageViewController.viewControllers![0]
         self.pageControl.currentPage = pages.index(of: pageContentViewController)!
     }
+    
     
 }
 

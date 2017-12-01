@@ -25,4 +25,7 @@ class LoadingViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // TODO: Poll server for status of process until response is "Done"
+    // TODO: When processing is finished, GET the processed image and display original and processed images in Results page
+    
 }

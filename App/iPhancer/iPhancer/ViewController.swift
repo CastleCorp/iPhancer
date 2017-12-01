@@ -95,6 +95,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             lvc.image = imageView.image
             lvc.resolution = resolution
+            
+            // TODO: Post data to server with API manager
         }
     }
     
