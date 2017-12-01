@@ -15,6 +15,7 @@
 		D2AEF7471FB0C10400F820BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2AEF7451FB0C10400F820BE /* LaunchScreen.storyboard */; };
 		D2AEF7521FB0C10400F820BE /* iPhancerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AEF7511FB0C10400F820BE /* iPhancerTests.swift */; };
 		D2AEF75D1FB0C10400F820BE /* iPhancerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AEF75C1FB0C10400F820BE /* iPhancerUITests.swift */; };
+		D2DA69E21FD1B42B00FF16BC /* ResultsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DA69E11FD1B42B00FF16BC /* ResultsPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D2AEF7581FB0C10400F820BE /* iPhancerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPhancerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2AEF75C1FB0C10400F820BE /* iPhancerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhancerUITests.swift; sourceTree = "<group>"; };
 		D2AEF75E1FB0C10400F820BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2DA69E11FD1B42B00FF16BC /* ResultsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				D2AEF7451FB0C10400F820BE /* LaunchScreen.storyboard */,
 				D2AEF7481FB0C10400F820BE /* Info.plist */,
 				D26B80961FCF121F008C04F2 /* LoadingViewController.swift */,
+				D2DA69E11FD1B42B00FF16BC /* ResultsPageViewController.swift */,
 			);
 			path = iPhancer;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2DA69E21FD1B42B00FF16BC /* ResultsPageViewController.swift in Sources */,
 				D2AEF73F1FB0C10300F820BE /* ViewController.swift in Sources */,
 				D2AEF73D1FB0C10300F820BE /* AppDelegate.swift in Sources */,
 				D26B80971FCF121F008C04F2 /* LoadingViewController.swift in Sources */,
