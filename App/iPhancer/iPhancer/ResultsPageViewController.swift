@@ -10,8 +10,8 @@ import UIKit
 
 class ResultsPageViewController: UIPageViewController {
     
-    var originalImage: UIImage!
-    var processedImage: UIImage!
+    public var originalImage: UIImage!
+    public var processedImage: UIImage!
     
     fileprivate lazy var pages: [UIViewController] = {
         return [

@@ -79,7 +79,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "showLoadingViewController" {
+        if identifier == "showResultsPage" {
             if imageView.image == nil {
                 noImageAlert()
                 return false
@@ -90,11 +90,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showLoadingViewController" {
-            let lvc = segue.destination as! LoadingViewController
+        if segue.identifier == "showResultsPage" {
+            let rvc = segue.destination as! ResultsPageViewController
             
-            lvc.image = imageView.image
-            lvc.resolution = resolution
+//            rvc.image = imageView.image
+//            rvc.resolution = resolution
             
             // TODO: Post data to server with API manager
         }

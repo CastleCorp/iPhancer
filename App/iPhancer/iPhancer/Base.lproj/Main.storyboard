@@ -35,7 +35,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Go"/>
                                 <connections>
-                                    <segue destination="08i-Cg-uml" kind="show" identifier="showLoadingViewController" id="R29-r7-Kib"/>
+                                    <segue destination="z1H-bS-VcC" kind="presentation" identifier="showResultsPage" id="HIY-aO-bT1"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="92I-d9-79D" userLabel="Resolution Stack">
@@ -99,46 +99,6 @@
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
         </scene>
-        <!--Loading View Controller-->
-        <scene sceneID="sqP-du-pch">
-            <objects>
-                <viewController id="08i-Cg-uml" customClass="LoadingViewController" customModule="iPhancer" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="yoZ-9n-Q8z">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGM-dh-jQc">
-                                <rect key="frame" x="0.0" y="28" width="375" height="61"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Processing Image">
-                                        <attributes>
-                                            <font key="NSFont" size="18" name="Zapfino"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="J9f-jS-50h">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
-                                <color key="color" cocoaTouchSystemColor="darkTextColor"/>
-                            </activityIndicatorView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="J9f-jS-50h" firstAttribute="centerX" secondItem="yoZ-9n-Q8z" secondAttribute="centerX" id="90H-DH-9N2"/>
-                            <constraint firstItem="J9f-jS-50h" firstAttribute="centerY" secondItem="yoZ-9n-Q8z" secondAttribute="centerY" id="NHr-4q-4eS"/>
-                            <constraint firstItem="qGM-dh-jQc" firstAttribute="trailing" secondItem="Rwb-a1-t1R" secondAttribute="trailing" id="YR4-di-Yj0"/>
-                            <constraint firstItem="qGM-dh-jQc" firstAttribute="top" secondItem="Rwb-a1-t1R" secondAttribute="top" constant="8" id="bwk-5B-Gxm"/>
-                            <constraint firstItem="qGM-dh-jQc" firstAttribute="leading" secondItem="Rwb-a1-t1R" secondAttribute="leading" id="sYx-n8-wcp"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Rwb-a1-t1R"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tVL-vF-Flt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="951" y="118"/>
-        </scene>
         <!--Results Page View Controller-->
         <scene sceneID="IAP-8x-Mf3">
             <objects>
@@ -150,7 +110,7 @@
         <!--Original Image View Controller-->
         <scene sceneID="jm8-gj-rVR">
             <objects>
-                <viewController storyboardIdentifier="OriginalViewController" id="2Xl-TS-gqH" userLabel="Original Image View Controller" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OriginalViewController" id="2Xl-TS-gqH" userLabel="Original Image View Controller" customClass="ImageBoardViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fFi-Rc-zXs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -187,12 +147,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Pe-7F-Snh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1292" y="796.55172413793105"/>
+            <point key="canvasLocation" x="1294" y="797"/>
         </scene>
         <!--Processed Image View Controller-->
         <scene sceneID="bfd-KC-97r">
             <objects>
-                <viewController storyboardIdentifier="ProcessedViewController" id="PQk-jT-a6Z" userLabel="Processed Image View Controller" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProcessedViewController" id="PQk-jT-a6Z" userLabel="Processed Image View Controller" customClass="ImageBoardViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0fW-6v-U9C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
