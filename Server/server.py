@@ -46,7 +46,11 @@ def process_image():
 
 @app.route('/getProcessStatus', methods=['GET'])
 def check_status():
-	return process_status
+	file = request.args['filename']
+	if os.path.isfile(os.path.join('enhanced', file)):
+		return "done"
+	else:
+		return "file does not exist"
 
 @app.route('/getProcessedPhoto', methods=['GET'])
 def get_photo():
@@ -54,7 +58,17 @@ def get_photo():
 
 	return send_file('enhanced/' + filename)
 
+@app.route('/delete')
+def delete_photo():
+	base_filename = request.args['filename']
+	filenames = ['_original.png', '_processed.png', '_before_after.png']
 
+
+@app.route('/setProcessStatus')
+def set_status():
+	set_process_status(request.args['status'])
+	return process_status
+	
 if __name__ == '__main__':
 	app.run(debug=True)
 	

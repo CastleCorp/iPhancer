@@ -14,11 +14,14 @@ import os
 import sys
 import server
 import multiprocessing
+import time
 
 def process_photo(model, res, gpu, fname):
-	running = multiprocessing.Process(target=server.set_process_status, args=("running"))
-	running.start()
-	running.join()
+	#running = multiprocessing.Process(target=server.set_process_status, args=("running"))
+	#running.start()
+	#running.join()
+
+	server.set_process_status("running")
 
 
 	phone = model
@@ -67,8 +70,17 @@ def process_photo(model, res, gpu, fname):
 		misc.imsave("enhanced/" + photo_name + "_processed.png", enhanced_image)
 		misc.imsave("enhanced/" + photo_name + "_before_after.png", before_after)
 
-		finished = multiprocessing.Process(target=server.set_process_status, args=("finished"))
-		finished.start()
-		finished.join()
+		#finished = multiprocessing.Process(target=server.set_process_status, args=("finished"))
+		#finished.start()
+		#finished.join()
 
+		server.set_process_status("finished")
+
+# def test():
+# 	start_time = time.time()
+# 	process_photo("iphone", "orig", "true", "0.jpg")
+# 	print("Execution time: %s" % (time.time() - start_time))
+
+# if __name__ == '__main__':
+# 	test()
 		
