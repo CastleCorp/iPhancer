@@ -7,57 +7,24 @@
 //
 
 import UIKit
+import AVFoundation
+import Foundation
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet weak var resolutionPicker: UIPickerView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var resolutionPicker: UISegmentedControl!
     
-    var pickerData: [String] = [String]()
+    var resolution: String = "orig"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // connect picker data
-        self.resolutionPicker.delegate = self
-        self.resolutionPicker.dataSource = self
-        
-        // initialize picker data
-        pickerData = ["original", "high", "medium", "small", "tiny"]
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
-    }
-    
-    
-    @IBAction func pickPhoto(_ sender: UIButton) {
-        let imagePicker = UIImagePickerController()
-        
-        imagePicker.sourceType = .photoLibrary
-        
-//        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-//            imagePicker.sourceType = .camera
-//        } else {
-//            imagePicker.sourceType = .photoLibrary
-//        }
-        
-        imagePicker.delegate = self
-        // show the image picker
-        present(imagePicker, animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -66,5 +33,72 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func takePhoto(_ sender: UIButton) {
+        let imagePicker = UIImagePickerController()
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            imagePicker.sourceType = .camera
+        } else {
+            imagePicker.sourceType = .photoLibrary
+        }
+        
+        imagePicker.delegate = self
+        present(imagePicker, animated: true, completion: nil)
+    }
+   
+    @IBAction func indexChanged(_ sender: UISegmentedControl) {
+        switch resolutionPicker.selectedSegmentIndex {
+        case 0:
+            resolution = "orig";
+        case 1:
+            resolution = "medium";
+        case 2:
+            resolution = "small";
+        default:
+            resolution = "orig";
+        }
+    }
+    
+    func noImageAlert() {
+        let alert = UIAlertController(title: "No image selected", message: "Please select an image to process", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Close", style: .default, handler: {action in
+            switch action.style {
+            case .default:
+               alert.dismiss(animated: true, completion: nil)
+            
+            case .cancel:
+                alert.dismiss(animated: true, completion: nil)
+                
+            case .destructive:
+                print("destructive")
+            }
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "showResultsPage" {
+            if imageView.image == nil {
+                noImageAlert()
+                return false
+            }
+            return true
+        }
+        return false
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showResultsPage" {
+            let rvc = segue.destination as! ResultsPageViewController
+            
+//            rvc.image = imageView.image
+//            rvc.resolution = resolution
+            
+            // TODO: Post data to server with API manager
+        }
+    }
+    
 }
 

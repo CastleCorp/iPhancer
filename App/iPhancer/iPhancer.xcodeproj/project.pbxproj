@@ -14,6 +14,10 @@
 		D2AEF7471FB0C10400F820BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2AEF7451FB0C10400F820BE /* LaunchScreen.storyboard */; };
 		D2AEF7521FB0C10400F820BE /* iPhancerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AEF7511FB0C10400F820BE /* iPhancerTests.swift */; };
 		D2AEF75D1FB0C10400F820BE /* iPhancerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AEF75C1FB0C10400F820BE /* iPhancerUITests.swift */; };
+		D2B9A78F1FD5A7E700447967 /* ImageBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B9A78E1FD5A7E700447967 /* ImageBoardViewController.swift */; };
+		D2B9A7911FD5AAC400447967 /* RestAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B9A7901FD5AAC400447967 /* RestAPIManager.swift */; };
+		D2B9A7971FD5BC1F00447967 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B9A7961FD5BC1F00447967 /* SwiftyJSON.swift */; };
+		D2DA69E21FD1B42B00FF16BC /* ResultsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DA69E11FD1B42B00FF16BC /* ResultsPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		D2AEF7581FB0C10400F820BE /* iPhancerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPhancerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2AEF75C1FB0C10400F820BE /* iPhancerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhancerUITests.swift; sourceTree = "<group>"; };
 		D2AEF75E1FB0C10400F820BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2B9A78E1FD5A7E700447967 /* ImageBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageBoardViewController.swift; sourceTree = "<group>"; };
+		D2B9A7901FD5AAC400447967 /* RestAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPIManager.swift; sourceTree = "<group>"; };
+		D2B9A7961FD5BC1F00447967 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		D2DA69E11FD1B42B00FF16BC /* ResultsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +107,14 @@
 			children = (
 				D2AEF73C1FB0C10300F820BE /* AppDelegate.swift */,
 				D2AEF73E1FB0C10300F820BE /* ViewController.swift */,
+				D2B9A7901FD5AAC400447967 /* RestAPIManager.swift */,
+				D2B9A7961FD5BC1F00447967 /* SwiftyJSON.swift */,
 				D2AEF7401FB0C10300F820BE /* Main.storyboard */,
 				D2AEF7431FB0C10300F820BE /* Assets.xcassets */,
 				D2AEF7451FB0C10400F820BE /* LaunchScreen.storyboard */,
 				D2AEF7481FB0C10400F820BE /* Info.plist */,
+				D2B9A78E1FD5A7E700447967 /* ImageBoardViewController.swift */,
+				D2DA69E11FD1B42B00FF16BC /* ResultsPageViewController.swift */,
 			);
 			path = iPhancer;
 			sourceTree = "<group>";
@@ -259,7 +271,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2B9A7911FD5AAC400447967 /* RestAPIManager.swift in Sources */,
+				D2DA69E21FD1B42B00FF16BC /* ResultsPageViewController.swift in Sources */,
 				D2AEF73F1FB0C10300F820BE /* ViewController.swift in Sources */,
+				D2B9A7971FD5BC1F00447967 /* SwiftyJSON.swift in Sources */,
+				D2B9A78F1FD5A7E700447967 /* ImageBoardViewController.swift in Sources */,
 				D2AEF73D1FB0C10300F820BE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,12 +442,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5C9KR29A53;
 				INFOPLIST_FILE = iPhancer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.castlecorp.iPhancer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -441,12 +459,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5C9KR29A53;
 				INFOPLIST_FILE = iPhancer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.castlecorp.iPhancer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
