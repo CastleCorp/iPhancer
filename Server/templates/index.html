@@ -27,18 +27,18 @@
     <strong>/process: </strong> Run image processor.
     <ul>
       <li><strong>Methods: </strong>GET</li>
-      <li><strong>Headers: </strong>URL args (resolution: text, use_gpu: text, filename: text, process_name: text)</li>
+      <li><strong>Headers: </strong>URL args (resolution: text, use_gpu: text, filename: text)</li>
       <li><strong>Returns: </strong>"Started new process for: <em>filename</em>"</li>
       <li><strong>Example: </strong>/process?resolution=orig&use_gpu=true&filename=0.jpg</li>
     </ul>
   </p>
   <p>
-    <strong>/getProcessStatus: </strong> Check if the image processor is running.
+    <strong>/getProcessStatus: </strong> Check if the file exists.
     <ul>
       <li><strong>Methods: </strong>GET</li>
-      <li><strong>Headers:</strong> None</li>
+      <li><strong>Headers:</strong> URL args (filename: text)</li>
       <li><strong>Returns:</strong> <em>process_status</em> (running or finished)</li>
-      <li><strong>Example: </strong>/getProcessStatus</li>
+      <li><strong>Example: </strong>/getProcessStatus?filename=0_enhanced.png</li>
     </ul>
   </p>
   <p>

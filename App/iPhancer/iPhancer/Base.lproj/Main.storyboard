@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -110,7 +110,7 @@
         <!--Original Image View Controller-->
         <scene sceneID="jm8-gj-rVR">
             <objects>
-                <viewController storyboardIdentifier="OriginalViewController" id="2Xl-TS-gqH" userLabel="Original Image View Controller" customClass="ImageBoardViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OriginalViewController" id="2Xl-TS-gqH" userLabel="Original Image View Controller" customClass="OriginalImageViewController" customModule="iPhancer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fFi-Rc-zXs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,7 +122,11 @@
                                 <rect key="frame" x="0.0" y="6" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Original" id="1AC-UV-uLi">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="uNa-bV-by5"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="uNa-bV-by5">
+                                            <connections>
+                                                <action selector="saveButtonPressed:" destination="2Xl-TS-gqH" id="REf-ne-JSu"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="qnb-bo-PdA">
                                             <connections>
                                                 <segue destination="BYZ-38-t0r" kind="show" id="gwf-KP-sCS"/>
@@ -144,6 +148,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kkw-de-0Bv"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="QqC-GQ-krq" id="4Un-wa-2pK"/>
+                        <outlet property="navigationBar" destination="1AC-UV-uLi" id="JqM-rt-nT3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Pe-7F-Snh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -152,7 +160,7 @@
         <!--Processed Image View Controller-->
         <scene sceneID="bfd-KC-97r">
             <objects>
-                <viewController storyboardIdentifier="ProcessedViewController" id="PQk-jT-a6Z" userLabel="Processed Image View Controller" customClass="ImageBoardViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProcessedViewController" id="PQk-jT-a6Z" userLabel="Processed Image View Controller" customClass="ProcessedImageViewController" customModule="iPhancer" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0fW-6v-U9C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -164,7 +172,11 @@
                                 <rect key="frame" x="0.0" y="6" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Processed" id="6lU-EW-UZ8">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="dng-9L-X3f"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="dng-9L-X3f">
+                                            <connections>
+                                                <action selector="saveButtonPressed:" destination="PQk-jT-a6Z" id="kx6-gc-xXn"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="hxD-a7-bx6">
                                             <connections>
                                                 <segue destination="BYZ-38-t0r" kind="show" id="Sa0-Kd-AYm"/>
@@ -186,6 +198,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n0Z-bn-7mC"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="sx2-g7-Wik" id="zwT-Pu-1KV"/>
+                        <outlet property="navigationBar" destination="6lU-EW-UZ8" id="hNj-zg-YG5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M4B-8a-W4D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -193,6 +209,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gwf-KP-sCS"/>
+        <segue reference="Sa0-Kd-AYm"/>
     </inferredMetricsTieBreakers>
 </document>

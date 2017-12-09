@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43290F72C6149375C797CB61 /* Pods_iPhancer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F8E640B81653613D36ED60 /* Pods_iPhancer.framework */; };
+		5614885B1FDB957400D609C1 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5614885A1FDB957400D609C1 /* ImageSaver.swift */; };
+		566214941FD706D000F90C3F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 566214951FD706D000F90C3F /* Alamofire.framework */; };
+		566214971FDB1EA900F90C3F /* OriginalImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566214961FDB1EA900F90C3F /* OriginalImageViewController.swift */; };
+		5662149B1FDB205F00F90C3F /* ProcessedImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5662149A1FDB205F00F90C3F /* ProcessedImageViewController.swift */; };
 		D2AEF73D1FB0C10300F820BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AEF73C1FB0C10300F820BE /* AppDelegate.swift */; };
 		D2AEF73F1FB0C10300F820BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AEF73E1FB0C10300F820BE /* ViewController.swift */; };
 		D2AEF7421FB0C10300F820BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2AEF7401FB0C10300F820BE /* Main.storyboard */; };
@@ -14,7 +19,6 @@
 		D2AEF7471FB0C10400F820BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2AEF7451FB0C10400F820BE /* LaunchScreen.storyboard */; };
 		D2AEF7521FB0C10400F820BE /* iPhancerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AEF7511FB0C10400F820BE /* iPhancerTests.swift */; };
 		D2AEF75D1FB0C10400F820BE /* iPhancerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AEF75C1FB0C10400F820BE /* iPhancerUITests.swift */; };
-		D2B9A78F1FD5A7E700447967 /* ImageBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B9A78E1FD5A7E700447967 /* ImageBoardViewController.swift */; };
 		D2B9A7911FD5AAC400447967 /* RestAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B9A7901FD5AAC400447967 /* RestAPIManager.swift */; };
 		D2B9A7971FD5BC1F00447967 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B9A7961FD5BC1F00447967 /* SwiftyJSON.swift */; };
 		D2DA69E21FD1B42B00FF16BC /* ResultsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DA69E11FD1B42B00FF16BC /* ResultsPageViewController.swift */; };
@@ -38,6 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24F8E640B81653613D36ED60 /* Pods_iPhancer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPhancer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5614885A1FDB957400D609C1 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
+		566214951FD706D000F90C3F /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		566214961FDB1EA900F90C3F /* OriginalImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginalImageViewController.swift; sourceTree = "<group>"; };
+		5662149A1FDB205F00F90C3F /* ProcessedImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessedImageViewController.swift; sourceTree = "<group>"; };
+		C6A5E0C2E4104EDB6CB315BA /* Pods-iPhancer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPhancer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iPhancer/Pods-iPhancer.debug.xcconfig"; sourceTree = "<group>"; };
 		D2AEF7391FB0C10300F820BE /* iPhancer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPhancer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2AEF73C1FB0C10300F820BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2AEF73E1FB0C10300F820BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,10 +61,10 @@
 		D2AEF7581FB0C10400F820BE /* iPhancerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPhancerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2AEF75C1FB0C10400F820BE /* iPhancerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhancerUITests.swift; sourceTree = "<group>"; };
 		D2AEF75E1FB0C10400F820BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D2B9A78E1FD5A7E700447967 /* ImageBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageBoardViewController.swift; sourceTree = "<group>"; };
 		D2B9A7901FD5AAC400447967 /* RestAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPIManager.swift; sourceTree = "<group>"; };
 		D2B9A7961FD5BC1F00447967 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		D2DA69E11FD1B42B00FF16BC /* ResultsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPageViewController.swift; sourceTree = "<group>"; };
+		F4715D5DB094777D0E16A986 /* Pods-iPhancer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPhancer.release.xcconfig"; path = "Pods/Target Support Files/Pods-iPhancer/Pods-iPhancer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				566214941FD706D000F90C3F /* Alamofire.framework in Frameworks */,
+				43290F72C6149375C797CB61 /* Pods_iPhancer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +94,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D97B4E27CE772C798F39AAF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C6A5E0C2E4104EDB6CB315BA /* Pods-iPhancer.debug.xcconfig */,
+				F4715D5DB094777D0E16A986 /* Pods-iPhancer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D2AEF7301FB0C10300F820BE = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +110,8 @@
 				D2AEF7501FB0C10400F820BE /* iPhancerTests */,
 				D2AEF75B1FB0C10400F820BE /* iPhancerUITests */,
 				D2AEF73A1FB0C10300F820BE /* Products */,
+				3D97B4E27CE772C798F39AAF /* Pods */,
+				EC8D80298603BBAD88E613DC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,13 +131,15 @@
 				D2AEF73C1FB0C10300F820BE /* AppDelegate.swift */,
 				D2AEF73E1FB0C10300F820BE /* ViewController.swift */,
 				D2B9A7901FD5AAC400447967 /* RestAPIManager.swift */,
+				5614885A1FDB957400D609C1 /* ImageSaver.swift */,
 				D2B9A7961FD5BC1F00447967 /* SwiftyJSON.swift */,
 				D2AEF7401FB0C10300F820BE /* Main.storyboard */,
+				5662149A1FDB205F00F90C3F /* ProcessedImageViewController.swift */,
+				566214961FDB1EA900F90C3F /* OriginalImageViewController.swift */,
+				D2DA69E11FD1B42B00FF16BC /* ResultsPageViewController.swift */,
 				D2AEF7431FB0C10300F820BE /* Assets.xcassets */,
 				D2AEF7451FB0C10400F820BE /* LaunchScreen.storyboard */,
 				D2AEF7481FB0C10400F820BE /* Info.plist */,
-				D2B9A78E1FD5A7E700447967 /* ImageBoardViewController.swift */,
-				D2DA69E11FD1B42B00FF16BC /* ResultsPageViewController.swift */,
 			);
 			path = iPhancer;
 			sourceTree = "<group>";
@@ -137,6 +162,15 @@
 			path = iPhancerUITests;
 			sourceTree = "<group>";
 		};
+		EC8D80298603BBAD88E613DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				566214951FD706D000F90C3F /* Alamofire.framework */,
+				24F8E640B81653613D36ED60 /* Pods_iPhancer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,9 +178,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2AEF7611FB0C10400F820BE /* Build configuration list for PBXNativeTarget "iPhancer" */;
 			buildPhases = (
+				B73EDE8CB049AFD48534BCA6 /* [CP] Check Pods Manifest.lock */,
 				D2AEF7351FB0C10300F820BE /* Sources */,
 				D2AEF7361FB0C10300F820BE /* Frameworks */,
 				D2AEF7371FB0C10300F820BE /* Resources */,
+				EFB26AA1D53E7BD7C9661CC3 /* [CP] Embed Pods Frameworks */,
+				D54DF2D58D61DAD1B86C853E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -266,6 +303,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B73EDE8CB049AFD48534BCA6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iPhancer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D54DF2D58D61DAD1B86C853E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iPhancer/Pods-iPhancer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EFB26AA1D53E7BD7C9661CC3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-iPhancer/Pods-iPhancer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
+				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/PINRemoteImage/PINRemoteImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iPhancer/Pods-iPhancer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D2AEF7351FB0C10300F820BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -273,10 +370,12 @@
 			files = (
 				D2B9A7911FD5AAC400447967 /* RestAPIManager.swift in Sources */,
 				D2DA69E21FD1B42B00FF16BC /* ResultsPageViewController.swift in Sources */,
+				5662149B1FDB205F00F90C3F /* ProcessedImageViewController.swift in Sources */,
 				D2AEF73F1FB0C10300F820BE /* ViewController.swift in Sources */,
 				D2B9A7971FD5BC1F00447967 /* SwiftyJSON.swift in Sources */,
-				D2B9A78F1FD5A7E700447967 /* ImageBoardViewController.swift in Sources */,
 				D2AEF73D1FB0C10300F820BE /* AppDelegate.swift in Sources */,
+				566214971FDB1EA900F90C3F /* OriginalImageViewController.swift in Sources */,
+				5614885B1FDB957400D609C1 /* ImageSaver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +539,7 @@
 		};
 		D2AEF7621FB0C10400F820BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6A5E0C2E4104EDB6CB315BA /* Pods-iPhancer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -457,6 +557,7 @@
 		};
 		D2AEF7631FB0C10400F820BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4715D5DB094777D0E16A986 /* Pods-iPhancer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

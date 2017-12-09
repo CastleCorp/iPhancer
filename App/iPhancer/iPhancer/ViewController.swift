@@ -16,6 +16,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var resolutionPicker: UISegmentedControl!
     
     var resolution: String = "orig"
+    var imageName: String = "name"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         imageView.image = image
+        
+        imageName = String(image.hash)
         
         dismiss(animated: true, completion: nil)
     }
@@ -90,13 +93,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "showResultsPage" {
+            
+            // Upload image to server
+            let params = [String:String]()
+            RestAPIManager.singleton.uploadImage(imageView: imageView, param: params, filename: imageName+".jpg")
+            
+            // Begin processing the image on the server
+            RestAPIManager.singleton.processImage(resolution: resolution, use_gpu: "true", filename: imageName+".jpg")
+            
             let rvc = segue.destination as! ResultsPageViewController
+            //let oivc = OriginalImageViewController()
+            //let pivc = ProcessedImageViewController()
             
-//            rvc.image = imageView.image
-//            rvc.resolution = resolution
-            
-            // TODO: Post data to server with API manager
+            //rvc.originalImageViewController = oivc
+            //rvc.processedImageViewController = pivc
+            rvc.originalImage = imageView.image
+           // rvc.downloadedImage = UIImage()
+            rvc.filename = imageName
         }
     }
     

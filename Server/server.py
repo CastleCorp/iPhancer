@@ -10,8 +10,7 @@ import time
 UPLOAD_FOLDER = os.path.basename('unprocessed')
 process_status = "none"
 #ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
-
-app = Flask(__name__)
+app = Flask(__name__, static_url_path="/enhanced", static_folder="enhanced")
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 def set_process_status(status):
@@ -55,8 +54,12 @@ def check_status():
 @app.route('/getProcessedPhoto', methods=['GET'])
 def get_photo():
 	filename = request.args['filename']
+	return send_file('enhanced/' + filename, mimetype='image/png')
 
-	return send_file('enhanced/' + filename)
+@app.route('/enhanced', methods=['GET'])
+def send_image():
+	filename = request.args['filename']
+	return send_static_file(filename)
 
 @app.route('/delete')
 def delete_photo():
