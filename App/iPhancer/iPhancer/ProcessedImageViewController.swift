@@ -16,12 +16,32 @@ class ProcessedImageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //setImage(image: UIImage(named:"loading")!)
-        setNavBarTitle(title: "Loading")
+        setImage(image: UIImage(named:"loading")!)
+        setNavBarTitle(title: "Processed")
+        navigationBar.leftBarButtonItem?.isEnabled = false
+    }
+    
+    func imageSaveAlert() {
+        let alert = UIAlertController(title: "Image saved", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Close", style: .default, handler: {action in
+            switch action.style {
+            case .default:
+                alert.dismiss(animated: true, completion: nil)
+                
+            case .cancel:
+                alert.dismiss(animated: true, completion: nil)
+                
+            case .destructive:
+                print("destructive")
+            }
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         UIImageWriteToSavedPhotosAlbum(imageView.image!, nil, nil, nil)
+        imageSaveAlert()
     }
     
     func setImage(image: UIImage) {
@@ -33,15 +53,13 @@ class ProcessedImageViewController: UIViewController {
     }
     
     func makeWebView(url: String) {
+        
         let url = URL(string: url)
         let data = try! Data(contentsOf: url!)
-        let myWebView:UIWebView = UIWebView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-        myWebView.contentMode = .scaleAspectFit
-        myWebView.scalesPageToFit = true
-        myWebView.frame = self.view.bounds
-        myWebView.load(data, mimeType: "image/png", textEncodingName: "UTF-8", baseURL: NSURL() as URL)
+        imageView.image = UIImage(data: data)
+        imageView.contentMode = UIViewContentMode.scaleAspectFit
+        navigationBar.leftBarButtonItem!.isEnabled = true
         
-        self.imageView.addSubview(myWebView)
     }
     
 }

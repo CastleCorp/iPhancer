@@ -59,7 +59,6 @@ class ResultsPageViewController: UIPageViewController {
         configurePageControl()
         
         let originalVC = pages[0] as! OriginalImageViewController
-        let processedVC = pages[1] as! ProcessedImageViewController
         originalVC.imageView.image = originalImage
         
         
@@ -69,17 +68,11 @@ class ResultsPageViewController: UIPageViewController {
     
     @objc func checkStatus() {
         let processedImageName = filename+"_processed.png"
-        let originalImageName = filename+"_original.png"
         if RestAPIManager.singleton.getProcessStatus(filename: processedImageName) == "done" {
-            //RestAPIManager.singleton.getProcessedPhoto(filename: processedImageName)
-            
             
             pollTimer.invalidate()
             
-            var originalVC = pages[0] as! OriginalImageViewController
-            var processedVC = pages[1] as! ProcessedImageViewController
-            
-            originalVC.navigationBar.title = "Original"
+            let processedVC = pages[1] as! ProcessedImageViewController
             
             processedVC.makeWebView(url: "http://localhost:5000/enhanced/"+processedImageName)
             

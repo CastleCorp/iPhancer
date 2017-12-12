@@ -17,12 +17,30 @@ class OriginalImageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //imageView.image = UIImage(named: "loading")
-        setNavBarTitle(title: "Loading")
+        setNavBarTitle(title: "Original")
+    }
+    
+    func imageSaveAlert() {
+        let alert = UIAlertController(title: "Image saved", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Close", style: .default, handler: {action in
+            switch action.style {
+            case .default:
+                alert.dismiss(animated: true, completion: nil)
+                
+            case .cancel:
+                alert.dismiss(animated: true, completion: nil)
+                
+            case .destructive:
+                print("destructive")
+            }
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         UIImageWriteToSavedPhotosAlbum(imageView.image!, nil, nil, nil)
+        imageSaveAlert()
     }
     
     func setImage(filename: String) {
